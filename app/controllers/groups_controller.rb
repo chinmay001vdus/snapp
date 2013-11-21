@@ -37,6 +37,8 @@ class GroupsController < ApplicationController
 
   def show
     @group= Group.find(params[:id])
+    @user= User.all
+    @post= Post.all
   end
   
 	private
