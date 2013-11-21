@@ -1,4 +1,26 @@
-<h1>Group <%= @group.name %></h1>
-<p>
-	<%= link_to 'Edit', edit_group_path(@group) %>
-</p>
+<div class="containr","row">
+ 		<div class="col-lg-12","text-muted"> <h3 class="header"> <%= @group.name %> </h3>
+  		    <h4> Description:</h4><h5 class="text-muted"><%= @group.description %></h5>
+    		    <p>
+			    <%=   link_to 'Edit', edit_group_path(@group), class: 'btn btn-warning btn-sm' %>
+    			</p>
+     	</div>
+ </div>
+ <div class="containr","row">
+	<div class="col-lg-8","text-muted"> <h5 class="header"> Posts: </h5>
+  	    <% @post.each do |p| %>
+			<h5><%= p.title %></h5>         
+			<h5 class="text-muted"><%= p.text %></h5>
+        <% end %>
+	</div>
+	
+	<div class="col-lg-4","text-muted"> <h5 class="header"> Members: </h5>
+  	    <% @user.each do |user| %>
+         <h5><%= user.first_name %> <%=user.last_name %></h5>
+        <% end %>
+	</div>
+ 		
+</div>
+
+ 
+
