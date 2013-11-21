@@ -1,9 +1,10 @@
-<h1> Groups </h1>
+<div class = "container">
+<h2 class = " header"> Groups <%= link_to "Create New", new_group_path, class: 'btn btn-warning btn-sm' %> </h2> 
 
 <% @group.each do |group| %>
 
   <br/>
-  <p> <%= group.name %> </p>
-  <p> <%= group.description %> </p>
+  <h5> <%= link_to group.name, group %> </h5><h5 class = "text-muted"> <%= group.description %> </p>
   
 <% end  %>
+</div>
